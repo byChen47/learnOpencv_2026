@@ -1,5 +1,5 @@
 import cv2
-
+import numpy
 img = cv2.imread('image.png',1)
 positionx = img[100,90]
 print(positionx)
@@ -20,3 +20,7 @@ print(img.size)
 face = img[100:500,50:300]
 cv2.imshow('face',face)
 cv2.waitKey(0)
+
+b ,g ,r = cv2.split(img)
+img = cv2.merge((b,g,r))
+cv2.imshow(img)
